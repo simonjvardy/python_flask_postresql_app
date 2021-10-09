@@ -81,3 +81,4 @@ TODO
 ## Acknowledgements ##
 
 - [Udemy: The Python Mega Course - Build 10 Real World Applications](https://www.udemy.com/course/the-python-mega-course/) Credit: Ardit Sulce
+- [Banner Image from Pexels](https://www.pexels.com/photo/calm-body-of-water-during-golden-hour-1631677/) Credit: [Abdullah Ghatasheh](https://www.pexels.com/@abdghat)
