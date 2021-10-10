@@ -30,7 +30,7 @@
             <div class="overlay"></div>
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-8 col-md-10 mx-auto">
+                    <div class="col-lg-8 col-md-10">
                         <div class="site-heading">
                             <h1>Collecting User Height Statistics</h1>
                             <span class="subheading">
@@ -41,6 +41,21 @@
                 </div>
             </div>
         </header>
+
+        <section>
+            <!-- Flash Message -->
+            {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                    {% for category, message in messages %}
+                        <div class="row flashes">
+                            <div class="col s12">
+                                <h4 class="{{ category }} text-center">{{ message }}</h4>
+                            </div>                        
+                        </div>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+        </section>
 
         <!-- Main Content -->
         <main class="container">
@@ -55,7 +70,7 @@
                     <div class="col-lg-8 col-md-10 mx-auto">
                         <ul class="list-inline text-center">
                             <li class="list-inline-item">
-                                <a href="#">
+                                <a href="https://twitter.com/?lang=en-gb">
                                     <span class="fa-stack fa-lg">
                                         <i class="fas fa-circle fa-stack-2x"></i>
                                         <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
@@ -63,15 +78,15 @@
                                 </a>
                             </li>
                             <li class="list-inline-item">
-                                <a href="#">
+                                <a href="https://www.linkedin.com/in/simonvardy/">
                                     <span class="fa-stack fa-lg">
                                         <i class="fas fa-circle fa-stack-2x"></i>
-                                        <i class="fab fa-facebook-f fa-stack-1x fa-inverse"></i>
+                                        <i class="fab fa-linked-in fa-stack-1x fa-inverse"></i>
                                     </span>
                                 </a>
                             </li>
                             <li class="list-inline-item">
-                                <a href="#">
+                                <a href="https://github.com/simonjvardy/python_flask_postresql_app">
                                     <span class="fa-stack fa-lg">
                                         <i class="fas fa-circle fa-stack-2x"></i>
                                         <i class="fab fa-github fa-stack-1x fa-inverse"></i>
