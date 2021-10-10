@@ -27,9 +27,13 @@ Post the form data to the database
 
 @app.route("/add_data", methods=["GET", "POST"])
 def add_data():
-    return redirect(url_for("user_form"))
+    if request.method == 'POST':
+        email = request.form["input_email"]
+        print(email)
+        return redirect(url_for("user_form"))
 
 
 if __name__ == "__main__":
     app.debug = True
-    app.run()
+    app.run(host=os.environ.get("IP"),
+            port=int(os.environ.get("PORT")))
