@@ -12,19 +12,27 @@
         <div class="col-6">
             <form method="POST" action="{{ url_for('add_data') }}">
                 <div class="mb-3">
-                    <label for="InputEmail" class="form-label">Email address</label>
-                    <input type="email" class="form-control" id="InputEmail" aria-describedby="emailHelp">
-                    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                    <label for="InputEmail" class="form-label">
+                        Email address
+                    </label>
+                    <input type="email" class="form-control" id="InputEmail" aria-describedby="emailHelp" required>
+                    <div id="emailHelp" class="form-text">
+                        We'll never share your email with anyone else.
+                    </div>
                 </div>
                 <div class="mb-3">
-                    <label for="exampleInputPassword1" class="form-label">Password</label>
-                    <input type="password" class="form-control" id="exampleInputPassword1">
+                    <label for="InputHeight" class="form-label" min="50" max="300" step="0.1">
+                        Height in cm
+                    </label>
+                    <input type="number" class="form-control" id="InputHeight" required>
                 </div>
                 <div class="mb-3 form-check">
                     <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                    <label class="form-check-label" for="exampleCheck1">Consent to store data</label>
                 </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn btn-primary">
+                    Submit <i class="fas fa-plus-square right"></i>
+                </button>
             </form>
         </div>
     </div>
