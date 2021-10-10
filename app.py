@@ -2,15 +2,30 @@ import os
 from flask import (
     Flask, flash, render_template,
     redirect, request, session, url_for)
-from flask.extensions.sqlalchemy import SQLAlchemy
+from flask_sqlalchemy import SQLAlchemy
 
 if os.path.exists("env.py"):
     import env
 
 
 app = Flask(__name__)
+app.config = os.environ["SQLALCHEMY_DATABASE_URI"]
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+db = SQLAlchemy(app)
 
 app.secret_key = os.environ.get("SECRET_KEY")
+
+
+# Database Model
+class Data(db.Model):
+    __tablename__="data"
+    id=db.Column(db.Integer, primary_key=True)
+    email_=db.Column(db.String(120), unique=True)
+    height_=db.Column(db.Integer)
+
+    def __init__(self, email_, height_):
+        self.email_=email_
+        self.height_=height_
 
 
 """
