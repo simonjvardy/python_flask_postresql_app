@@ -9,6 +9,8 @@ if os.path.exists("env.py"):
 
 app = Flask(__name__)
 
+app.secret_key = os.environ.get("SECRET_KEY")
+
 
 """
 Render the user input landing page
@@ -29,7 +31,10 @@ Post the form data to the database
 def add_data():
     if request.method == 'POST':
         email = request.form["input_email"]
+        height = request.form["input_height"]
         print(email)
+        print(height)
+        flash("Success! An email has been sent to you confirming your data")
         return redirect(url_for("user_form"))
 
 
