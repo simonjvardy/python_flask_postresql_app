@@ -10,7 +10,7 @@ if os.path.exists("env.py"):
 
 app = Flask(__name__)
 app.config = os.environ["SQLALCHEMY_DATABASE_URI"]
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+# app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
 app.secret_key = os.environ.get("SECRET_KEY")
